@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="author" content="Ridhima Vijay">
     <meta name="description" content="The official website for the Little Taco Shop">
-    <title>The Little Taco Shop</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>The Little Taco Shop🌮</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -14,16 +14,15 @@
     <header>
         <h1>Welcome to The Little Taco Shop</h1>
         <nav>
-            <ul>
-                <li><a href="#about">About LTS<abbr title="The Little Taco Shop"></abbr></a></li>
-                <li><a href="#menu">Our Menu</a></li>
-                <li><a href="hours.html">Store Hours</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+            <a href="#about" id="a">About</a>
+            <a href="#menu" class="a">Our Menu</a>
+            <a href="hours.html" class="a">Store Hours</a>
+            <a href="contact.html" class="a">Contact Us</a>
+            
         </nav>
 
         <figure>
-            <img src="img/tacos_and_drink_400x267.png" alt="The Tacos and a Drink" title="We love tacos!" width="600" height="400">
+            <img src="img/tacos_and_drink_400x267.png" alt="The Tacos and a Drink" title="We love tacos!" width="800" height="500">
             <figcaption>Tacos and a Drink</figcaption>  
         </figure>
     </header><hr>
@@ -36,6 +35,7 @@
                 <h3>Taco Trivia</h3>
                 <details>
                     <summary>When did tacos first appear in United Stated?</summary>
+                    
                     <p>
                          Jeffrey M. Pilcher,a taco historian and  professor at the University of Minnesota, says the earlist mention of tacos in the United States are in a newspaper from <time datetime="1905">1905</time>. (Source:<cite> <a href="https://www.timotis.com/news-1/history-of-tacos#:~:text=Tacos%20were%20first%20recorded%20in,in%20Mexico%20until%20the%201960's." target="_blank">timotis</a></cite>)
                     </p>
@@ -45,19 +45,19 @@
         <hr>
         <article id="menu">
             <h2>Our Menu</h2>
-            <table >
+            <table>
                 <caption>Our Tacos</caption>
                 <thead>
                     <tr>
                         <th>Tacos</th>
-                        <th scope="col"><abbr title="Quantity">Qty</abbr></th>
-                        <th scope="col">Price</th>
+                        <th >Qty</th>
+                        <th >Price</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <tr>
-                        <th scope="row" rowspan="3">Crunchy</th>
+                        <th rowspan="3">Crunchy</th>
                         <td>1</td>
                         <td>$1.50</td>
                     </tr>
@@ -70,7 +70,7 @@
                         <td>$3.50</td>
                     </tr>
                     <tr>
-                        <th scope="row" rowspan="3">Soft</th>
+                        <th rowspan="3">Soft</th>
                         <td>1</td>
                         <td>$2.00</td>
                     </tr>
