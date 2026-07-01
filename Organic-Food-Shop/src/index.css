@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Oswald:wght@300;400;500;700&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+:root {
+  --primary: #2e7d32;
+  --primary-dark: #1b5e20;
+  --primary-light: #e8f5e9;
+  --secondary: #ff8f00;
+  --dark: #212529;
+  --light: #f8f9fa;
+  --white: #ffffff;
+  --gray: #6c757d;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--dark);
+  background-color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  line-height: 1.65;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Use Oswald for all headings and navigation to keep the classic look */
+h1, h2, h3, h4, h5, h6, .nav-link {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Use Outfit or default sans-serif for regular paragraphs, forms, and small texts */
+p, span, input, textarea, button {
+  font-family: 'Outfit', sans-serif;
+}
