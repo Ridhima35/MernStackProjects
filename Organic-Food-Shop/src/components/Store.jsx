@@ -46,10 +46,10 @@ const Store = () => {
   // Resolves whether to use local asset or fallback external URL
   const getProductImage = (imageField) => {
     if (!imageField) return '';
-    
+
     // Extract filename if a path is given (e.g. "images/ghee.jpg" -> "ghee.jpg")
     const filename = imageField.split('/').pop();
-    
+
     return imageMap[filename] || imageField;
   };
 
@@ -66,11 +66,11 @@ const Store = () => {
           </div>
           <div className="row g-4">
             {products.map((product) => (
-              <ProductCard 
-                key={product._id || product.id} 
-                product={product} 
-                onSelect={setSelectedProduct} 
-                getProductImage={getProductImage} 
+              <ProductCard
+                key={product._id || product.id}
+                product={product}
+                onSelect={setSelectedProduct}
+                getProductImage={getProductImage}
               />
             ))}
           </div>
@@ -78,10 +78,10 @@ const Store = () => {
       </div>
 
       {/* Product Detail Modal Component */}
-      <ProductModal 
-        product={selectedProduct} 
-        onClose={() => setSelectedProduct(null)} 
-        getProductImage={getProductImage} 
+      <ProductModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+        getProductImage={getProductImage}
       />
     </section>
   );
