@@ -33,15 +33,62 @@ const Store = () => {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
+  // Search, filter, and pagination states
+  const [search, setSearch] = useState('');
+  const [category, setCategory] = useState('all');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(false);
+
+  // Available categories matching your database structure
+  const categories = [
+    { id: 'all', name: 'All' },
+    { id: 'honey', name: 'Honey' },
+    { id: 'ghee', name: 'Ghee' },
+    { id: 'seeds', name: 'Seeds' },
+    { id: 'oil', name: 'Oils' },
+    { id: 'tea', name: 'Tea' },
+    { id: 'grains', name: 'Grains' }
+  ];
+
   useEffect(() => {
     const loadProducts = async () => {
-      const apiData = await fetchProducts();
-      if (apiData && apiData.length > 0) {
-        setProducts(apiData);
+      setLoading(true);
+      const apiData = await fetchProducts({
+        page: currentPage,
+        limit: 6,
+        category: category !== 'all' ? category : '',
+        search: search
+      });
+
+      if (apiData) {
+        setProducts(apiData.products || []);
+        setTotalPages(apiData.pages || 1);
+      } else {
+        setProducts([]);
+        setTotalPages(1);
       }
+      setLoading(false);
     };
-    loadProducts();
-  }, []);
+
+    // Use a small delay for search input to prevent sending requests on every keystroke
+    const delayDebounce = setTimeout(() => {
+      loadProducts();
+    }, 300);
+
+    return () => clearTimeout(delayDebounce);
+  }, [currentPage, category, search]);
+
+  // Reset page when search or category changes
+  const handleCategoryChange = (catId) => {
+    setCategory(catId);
+    setCurrentPage(1);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+    setCurrentPage(1);
+  };
 
   // Resolves whether to use local asset or fallback external URL
   const getProductImage = (imageField) => {
@@ -64,16 +111,92 @@ const Store = () => {
               <h6 className="text-danger fw-semibold">Pick Your Product From Our Store</h6>
             </div>
           </div>
-          <div className="row g-4">
-            {products.map((product) => (
-              <ProductCard
-                key={product._id || product.id}
-                product={product}
-                onSelect={setSelectedProduct}
-                getProductImage={getProductImage}
-              />
-            ))}
+
+          {/* Search and Category Filter Section */}
+          <div className="row mb-4 g-3 align-items-center justify-content-between">
+            <div className="col-md-4">
+              <div className="input-group shadow-sm">
+                <span className="input-group-text bg-white border-end-0 text-muted">
+                  <i className="bi bi-search"></i>
+                </span>
+                <input
+                  type="text"
+                  className="form-control border-start-0 py-2"
+                  placeholder="Search products..."
+                  value={search}
+                  onChange={handleSearchChange}
+                />
+              </div>
+            </div>
+
+            <div className="col-md-8 text-md-end">
+              <div className="d-flex flex-wrap gap-2 justify-content-md-end">
+                {categories.map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => handleCategoryChange(cat.id)}
+                    className={`btn rounded-pill px-3 py-1.5 fw-semibold shadow-sm transition-all ${category === cat.id
+                        ? 'btn-success text-white'
+                        : 'btn-outline-success bg-white text-success'
+                      }`}
+                  >
+                    {cat.name}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
+
+          {/* Product Grid */}
+          {loading ? (
+            <div className="text-center py-5">
+              <div className="spinner-border text-success" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          ) : products.length > 0 ? (
+            <>
+              <div className="row g-4">
+                {products.map((product) => (
+                  <ProductCard
+                    key={product._id || product.id}
+                    product={product}
+                    onSelect={setSelectedProduct}
+                    getProductImage={getProductImage}
+                  />
+                ))}
+              </div>
+
+              {/* Pagination Controls */}
+              {totalPages > 1 && (
+                <div className="d-flex justify-content-center align-items-center mt-5 gap-3">
+                  <button
+                    className="btn btn-outline-success px-4 py-2 rounded-pill shadow-sm"
+                    disabled={currentPage === 1}
+                    onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                  >
+                    <i className="bi bi-arrow-left me-2"></i> Previous
+                  </button>
+                  <span className="fw-semibold text-muted">
+                    Page {currentPage} of {totalPages}
+                  </span>
+                  <button
+                    className="btn btn-outline-success px-4 py-2 rounded-pill shadow-sm"
+                    disabled={currentPage === totalPages}
+                    onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                  >
+                    Next <i className="bi bi-arrow-right ms-2"></i>
+                  </button>
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="text-center py-5 card border-0 bg-white shadow-sm rounded-4">
+              <i className="bi bi-emoji-frown text-success fs-1 mb-2"></i>
+              <h5 className="fw-bold">No products found</h5>
+              <p className="text-muted">Try adjusting your filters or search term.</p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -88,4 +211,3 @@ const Store = () => {
 };
 
 export default Store;
-

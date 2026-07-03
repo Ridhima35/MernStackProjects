@@ -1,0 +1,130 @@
+[{
+  "_id": {
+    "$oid": "6a2fbe18c72f22dbdf92abc2"
+  },
+  "name": "Organic Creamy Peanut Butter",
+  "price": 275,
+  "category": "Spreads",
+  "image": "https://example.com/images/peanut_butter.jpg",
+  "stock": 35,
+  "brand": "Pintola",
+  "description": "Unsweetened organic peanut butter made with 100% roasted organic peanuts",
+  "discount": 8
+},
+{
+  "_id": {
+    "$oid": "6a2fbe18c72f22dbdf92abc0"
+  },
+  "name": "Organic Flax Seeds",
+  "price": 110,
+  "category": "Seeds & Nuts",
+  "image": "https://example.com/images/flax_seeds.jpg",
+  "stock": 70,
+  "brand": "True Elements",
+  "description": "Premium raw flax seeds loaded with Omega-3 fatty acids and antioxidants",
+  "discount": 5
+},
+{
+  "_id": {
+    "$oid": "6a2fbe18c72f22dbdf92abc6"
+  },
+  "name": "Organic Red Lentils (Masoor Dal)",
+  "price": 130,
+  "category": "Grains",
+  "image": "https://example.com/images/red_lentils.jpg",
+  "stock": 55,
+  "brand": "Organic Tattva",
+  "description": "Unpolished and chemical-free organic red lentils high in protein and iron",
+  "discount": 0
+},
+{
+  "_id": {
+    "$oid": "6a2fbe18c72f22dbdf92abc7"
+  },
+  "name": "Organic Apple Juice",
+  "price": 199,
+  "category": "Beverages",
+  "image": "https://example.com/images/apple_juice.jpg",
+  "stock": 40,
+  "brand": "Ceres",
+  "description": "100% pure organic apple juice made from sun-ripened organic apples",
+  "discount": 10
+},
+{
+  "_id": {
+    "$oid": "6a2fbe18c72f22dbdf92abc8"
+  },
+  "name": "Organic Stevia Sweetener",
+  "price": 210,
+  "category": "Natural",
+  "image": "https://example.com/images/stevia.jpg",
+  "stock": 50,
+  "brand": "Sugar Free Green",
+  "description": "100% natural, zero-calorie sweetener extracted from organic stevia leaves",
+  "discount": 7
+},
+{
+  "_id": {
+    "$oid": "6a2fbe18c72f22dbdf92abc5"
+  },
+  "name": "Raw Organic Walnuts",
+  "price": 499,
+  "category": "Seeds & Nuts",
+  "image": "https://example.com/images/walnuts.jpg",
+  "stock": 30,
+  "brand": "Happilo",
+  "description": "Premium unshelled organic walnuts, excellent source of brain-boosting Omega-3s",
+  "discount": 10
+},
+{
+  "_id": {
+    "$oid": "6a2fbe18c72f22dbdf92abbf"
+  },
+  "name": "Organic Rolled Oats",
+  "price": 140,
+  "category": "Grains",
+  "image": "https://example.com/images/rolled_oats.jpg",
+  "stock": 45,
+  "brand": "Bagrry's",
+  "description": "100% whole grain organic rolled oats, rich in dietary fiber and beta-glucan",
+  "discount": 10
+},
+{
+  "_id": {
+    "$oid": "6a2fbe18c72f22dbdf92abc1"
+  },
+  "name": "Pure Maple Syrup",
+  "price": 599,
+  "category": "Natural",
+  "image": "https://example.com/images/maple_syrup.jpg",
+  "stock": 20,
+  "brand": "L'Ancestral",
+  "description": "100% pure organic Canadian Grade A maple syrup with no artificial additives",
+  "discount": 12
+},
+{
+  "_id": {
+    "$oid": "6a2fbe18c72f22dbdf92abc3"
+  },
+  "name": "Organic Turmeric Powder",
+  "price": 85,
+  "category": "Spices",
+  "image": "https://example.com/images/turmeric_powder.jpg",
+  "stock": 90,
+  "brand": "24 Mantra Organic",
+  "description": "Pure organic turmeric powder with high curcumin content for natural healing",
+  "discount": 5
+},
+{
+  "_id": {
+    "$oid": "6a2fbe18c72f22dbdf92abc4"
+  },
+  "name": "Extra Virgin Olive Oil",
+  "price": 799,
+  "category": "Oils & Ghee",
+  "image": "https://example.com/images/olive_oil.jpg",
+  "stock": 25,
+  "brand": "Borges",
+  "description": "First cold-pressed extra virgin olive oil perfect for salads and light cooking",
+  "discount": 15
+}]
