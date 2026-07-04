@@ -32,19 +32,6 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <form className="d-flex align-items-center position-relative me-2" style={{ maxWidth: '300px', width: '100%' }}>
-            <div className="input-group">
-              <span className="input-group-text bg-white border-end-0 rounded-start-pill text-muted">
-                <i className="fas fa-search"></i>
-              </span>
-              <input
-                className="form-control border-start-0 rounded-end-pill px-3 py-2 search-input"
-                type="search"
-                placeholder="Search fresh products..."
-                aria-label="Search"
-              />
-            </div>
-          </form>
         </div>
       </div>
     </nav>

@@ -1,5 +1,3 @@
-import heroImg from '../assets/images/hero.jpg';
-
 const Home = () => {
   return (
     <section className="main" id="home">
@@ -22,7 +20,7 @@ const Home = () => {
           <div className="col-lg-6 mt-lg-0 mt-5 d-flex justify-content-center">
             <div className="hero-img-wrapper" style={{ width: '80%', aspectRatio: '1/1' }}>
               <img 
-                src={heroImg} 
+                src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 className="img-fluid w-100 h-100" 
                 style={{ objectFit: 'cover' }} 
                 alt="Organic Farming Background" 

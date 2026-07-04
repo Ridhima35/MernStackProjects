@@ -1,19 +1,18 @@
 import React from 'react';
 
-const ProductCard = ({ product, onSelect, getProductImage }) => {
-  const displayPrice = typeof product.price === 'number' ? `₹ ${product.price}` : product.price;
-  const productImage = getProductImage(product.image || product.img);
+const ProductCard = ({ product, onSelect }) => {
+  const productImage = product.image;
 
   // Calculate price after discount
   const hasDiscount = product.discount > 0;
   const originalPrice = product.price;
-  const discountedPrice = hasDiscount 
-    ? Math.round(originalPrice * (1 - product.discount / 100)) 
+  const discountedPrice = hasDiscount
+    ? Math.round(originalPrice * (1 - product.discount / 100))
     : originalPrice;
 
   return (
     <div className="col-lg-3 col-md-6">
-      <div 
+      <div
         className="product-card h-100 d-flex flex-column justify-content-between bg-white shadow-sm rounded-3 position-relative"
         style={{ cursor: 'pointer' }}
         onClick={() => onSelect(product)}
@@ -28,10 +27,10 @@ const ProductCard = ({ product, onSelect, getProductImage }) => {
         <div>
           {/* Product Image */}
           <div className="product-img-wrapper position-relative bg-light rounded-top-3 overflow-hidden" style={{ height: '200px' }}>
-            <img 
-              src={productImage} 
-              className="w-100 h-100 object-fit-cover transition-scale" 
-              alt={product.name} 
+            <img
+              src={productImage}
+              className="w-100 h-100 object-fit-cover transition-scale"
+              alt={product.name}
             />
           </div>
 
@@ -53,8 +52,8 @@ const ProductCard = ({ product, onSelect, getProductImage }) => {
               <span className="fw-bold text-success fs-5">₹ {originalPrice}</span>
             )}
           </div>
-          
-          <button 
+
+          <button
             className="btn btn-success btn-sm rounded-pill w-100 py-2 fw-bold"
             onClick={(e) => {
               e.stopPropagation(); // Prevents double-firing selection

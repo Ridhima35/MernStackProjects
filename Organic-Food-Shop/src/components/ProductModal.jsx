@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ProductModal = ({ product, onClose, getProductImage }) => {
+const ProductModal = ({ product, onClose }) => {
   if (!product) return null;
 
-  const modalProductImage = getProductImage(product.image || product.img);
+  const modalProductImage = product.image || product.img;
   const hasDiscount = product.discount > 0;
   const originalPrice = product.price;
   const discountedPrice = hasDiscount 
