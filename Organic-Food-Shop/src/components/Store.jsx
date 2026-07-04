@@ -15,8 +15,9 @@ import almondImg from '../assets/images/almonds.jpg';
 import saltImg from '../assets/images/pink_salt.jpg';
 import riceImg from '../assets/images/brown_rice.jpg';
 
-// Map database image filenames exactly to their corresponding local assets
+// Map database image filenames exactly to their corresponding local assets or online fallbacks
 const imageMap = {
+  // Local assets
   'honey.jpg': honeyImg,
   'ghee.jpg': gheeImg,
   'chia_seeds.jpg': chiaImg,
@@ -26,7 +27,7 @@ const imageMap = {
   'quinoa.jpg': quinoaImg,
   'almonds.jpg': almondImg,
   'pink_salt.jpg': saltImg,
-  'brown_rice.jpg': riceImg
+  'brown_rice.jpg': riceImg,
 };
 
 const Store = () => {
@@ -40,15 +41,16 @@ const Store = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
 
-  // Available categories matching your database structure
+  // Categories matching the products in products.json
   const categories = [
     { id: 'all', name: 'All' },
-    { id: 'honey', name: 'Honey' },
-    { id: 'ghee', name: 'Ghee' },
-    { id: 'seeds', name: 'Seeds' },
-    { id: 'oil', name: 'Oils' },
-    { id: 'tea', name: 'Tea' },
-    { id: 'grains', name: 'Grains' }
+    { id: 'Spreads', name: 'Spreads' },
+    { id: 'Seeds & Nuts', name: 'Seeds & Nuts' },
+    { id: 'Grains', name: 'Grains' },
+    { id: 'Beverages', name: 'Beverages' },
+    { id: 'Natural', name: 'Natural' },
+    { id: 'Spices', name: 'Spices' },
+    { id: 'Oils & Ghee', name: 'Oils & Ghee' }
   ];
 
   useEffect(() => {
@@ -136,8 +138,8 @@ const Store = () => {
                     key={cat.id}
                     onClick={() => handleCategoryChange(cat.id)}
                     className={`btn rounded-pill px-3 py-1.5 fw-semibold shadow-sm transition-all ${category === cat.id
-                        ? 'btn-success text-white'
-                        : 'btn-outline-success bg-white text-success'
+                      ? 'btn-success text-white'
+                      : 'btn-outline-success bg-white text-success'
                       }`}
                   >
                     {cat.name}
