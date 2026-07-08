@@ -1,68 +1,81 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../style/navbar.css'; // Import custom styles
 
 function Navbar() {
+    const [currency, setCurrency] = useState('INR');
+
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3 sticky-top">
-            <div className="container">
-                {/* Brand Logo */}
-                <a className="navbar-brand logo-text fs-3 text-success fw-bold" href="#">
-                    🌸 Petal & Bloom
-                </a>
+        <nav className="navbar-custom bg-white border-bottom sticky-top">
+            {/* Row 1: Top Bar (Currency | Logo | Faccount & Actions) */}
+            <div className="navbar-top-row py-3">
+                <div className="container d-flex justify-content-between align-items-center">
 
-                {/* Mobile Toggle Button */}
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+                    {/* Left: Currency Dropdown Selector */}
+                    <div className="currency-selector">
+                        <select
+                            className="form-select form-select-sm border-0 bg-light text-muted fw-semibold"
+                            value={currency}
+                            onChange={(e) => setCurrency(e.target.value)}
+                            style={{ width: '85px', cursor: 'pointer' }}
+                        >
+                            <option value="INR">INR</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div>
 
-                {/* Nav Links */}
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav mx-auto mb-2 mb-lg-0 fw-medium">
-                        <li className="nav-item px-2">
-                            <a className="nav-link active text-success" href="#">Home</a>
-                        </li>
-                        <li className="nav-item px-2">
-                            <a className="nav-link" href="#">Store</a>
-                        </li>
-                        <li className="nav-item px-2">
-                            <a className="nav-link" href="#">About Us</a>
-                        </li>
-                        <li className="nav-item px-2">
-                            <a className="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
+                    {/* Center: Brand Logo */}
+                    <div className="logo-container text-center">
+                        <a className="logo-text text-decoration-none" href="#">
+                            PETAL & BLOOM
+                        </a>
+                    </div>
 
-                    {/* Right side icons */}
-                    <div className="d-flex align-items-center gap-3">
+                    {/* Right Side: Faccount, Search, Cart */}
+                    <div className="d-flex align-items-center gap-4">
+                        {/* Faccount */}
+                        <a href="#" className="text-secondary text-decoration-none fw-medium d-flex align-items-center gap-1 nav-icon-link">
+                            <i className="bi bi-person-circle fs-5"></i>
+
+                        </a>
+
                         {/* Search Icon */}
-                        <a href="#" className="text-secondary fs-5 nav-icon-link">
+                        <a href="#" className="text-secondary fs-5 nav-icon-link text-decoration-none">
                             <i className="fas fa-search"></i>
                         </a>
 
-                        {/* Wishlist Icon */}
-                        <a href="#" className="text-secondary fs-5 nav-icon-link position-relative">
-                            <i className="bi bi-heart"></i>
-                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style={{ fontSize: '0.6rem' }}>
-                                0
-                            </span>
-                        </a>
-
                         {/* Cart Icon */}
-                        <a href="#" className="text-secondary fs-5 nav-icon-link position-relative">
+                        <a href="#" className="text-secondary fs-5 nav-icon-link position-relative text-decoration-none">
                             <i className="fas fa-shopping-basket"></i>
                             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success" style={{ fontSize: '0.6rem' }}>
                                 3
                             </span>
                         </a>
                     </div>
+                </div>
+            </div>
+
+            {/* Row 2: Navigation Links & Categories */}
+            <div className="navbar-bottom-row py-2 bg-white">
+                <div className="container">
+                    <ul className="nav justify-content-center fw-medium gap-3 gap-md-4">
+                        <li className="nav-item">
+                            <a className="nav-link text-dark px-2" href="#">Shop By Collections</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link text-success px-2 active" href="#">Home</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link text-dark px-2" href="#">Shop By Occasions</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link text-dark px-2" href="#">Floral Decor</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link text-dark px-2 d-flex align-items-center gap-1" href="#">Choose Your City</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>

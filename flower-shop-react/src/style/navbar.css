@@ -1,29 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+
+/* Custom Navbar Container */
+.navbar-custom {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    z-index: 1030;
+}
+
 /* Logo Styling */
 .logo-text {
-    font-family: 'Lobster Two', 'Dancing Script', serif;
-    /* Uses your loaded Google Fonts */
-    letter-spacing: 1px;
-}
-
-/* Nav Links hover animation */
-.navbar-nav .nav-link {
-    color: #555;
+    font-family: 'Montserrat', 'Cormorant Garamond', 'Didot', serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: #1a1a1a !important;
+    /* Elegant deep charcoal/black */
+    letter-spacing: 4px;
+    /* Generous spacing for a luxury feel */
+    text-transform: uppercase;
     transition: color 0.3s ease;
-    position: relative;
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
+.logo-text:hover {
     color: #198754 !important;
-    /* Bootstrap success green */
+    /* Soft green accent on hover */
 }
 
-/* Icons hover effect */
+
+/* Top Row Styles */
+.currency-selector select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Icons and Links hover micro-animations */
 .nav-icon-link {
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .nav-icon-link:hover {
     color: #198754 !important;
-    transform: scale(1.1);
+    /* Premium Green */
+    transform: translateY(-2px);
+}
+
+/* Bottom Navigation Row Links */
+.navbar-bottom-row .nav-link {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #1c1b1b;
+    transition: color .2s ease-in-out;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+
+/* Hover & Active underline animations for navigation links */
+.navbar-bottom-row .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 2px;
+    left: 12px;
+    background-color: #198754;
+    transition: width 0.25s ease;
+}
+
+.navbar-bottom-row .nav-link:hover::after,
+.navbar-bottom-row .nav-link.active::after {
+    width: calc(100% - 24px);
+}
+
+.navbar-bottom-row .nav-link:hover,
+.navbar-bottom-row .nav-link.active {
+    color: #198754 !important;
+}
+
+/* City Selector visual hint */
+.navbar-bottom-row .nav-link i {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.navbar-bottom-row .nav-link:hover i {
+    transform: scale(1.2);
 }
