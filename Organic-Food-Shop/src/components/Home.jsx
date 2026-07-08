@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Home = () => {
   return (
     <section className="main" id="home">
@@ -13,7 +15,7 @@ const Home = () => {
               Discover clean, farm-fresh ingredients grown with care and delivered straight to your doorstep. Live healthy, eat organic.
             </p>
             <div className="d-flex flex-sm-row flex-column gap-3 justify-content-lg-start justify-content-center">
-              <a href="#store" className="btn1 text-decoration-none text-center">Explore Store</a>
+              <Link to="/store" className="btn1 text-decoration-none text-center">Explore Store</Link>
               <button className="btn btn-outline-success btn-lg rounded-pill px-4 py-3 fw-bold">More Tips</button>
             </div>
           </div>
