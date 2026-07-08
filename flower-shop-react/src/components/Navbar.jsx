@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import React, { useState } from 'react';
 import '../style/navbar.css'; // Import custom styles
 
@@ -27,9 +29,9 @@ function Navbar() {
 
                     {/* Center: Brand Logo */}
                     <div className="logo-container text-center">
-                        <a className="logo-text text-decoration-none" href="#">
+                        <Link className="logo-text text-decoration-none" href="#">
                             PETAL & BLOOM
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Right Side: Faccount, Search, Cart */}
@@ -61,19 +63,19 @@ function Navbar() {
                 <div className="container">
                     <ul className="nav justify-content-center fw-medium gap-3 gap-md-4">
                         <li className="nav-item">
-                            <a className="nav-link text-dark px-2" href="#">Shop By Collections</a>
+                            <Link className="nav-link text-dark px-2" to="/collections">Shop By Collections</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-success px-2 active" href="#">Home</a>
+                            <Link className="nav-link text-success px-2 active" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-dark px-2" href="#">Shop By Occasions</a>
+                            <Link className="nav-link text-dark px-2" to="/Occasions">Shop By Occasions</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-dark px-2" href="#">Floral Decor</a>
+                            <Link className="nav-link text-dark px-2" to="/decor">Floral Decor</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-dark px-2 d-flex align-items-center gap-1" href="#">Choose Your City</a>
+                            <Link className="nav-link text-dark px-2 d-flex align-items-center gap-1" to="/city">Choose Your City</Link>
                         </li>
                     </ul>
                 </div>
