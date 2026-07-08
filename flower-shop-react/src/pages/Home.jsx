@@ -13,7 +13,7 @@ function Home() {
                             <h1 className="hero-title mb-4">
                                 Blooming Happiness Delivered to Your Doorstep
                             </h1>
-                            <p className="lead text-secondary mb-5 delay-1">
+                            <p className="lead hero-desc mb-5 delay-1">
                                 Experience the joy of giving and receiving the freshest premium flowers handcrafted by local expert florists for every unique occasion.
                             </p>
                             <div className="d-flex gap-3 delay-2">

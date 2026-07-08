@@ -1,8 +1,8 @@
 /* Hero Section Background & Layout */
 .hero-section {
     position: relative;
-    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.5)),
-        url('https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=1600') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)),
+        url('https://plus.unsplash.com/premium_photo-1709428833194-66ec968d5cbb?q=80&w=1661&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
     background-size: cover;
     padding: 120px 0;
     min-height: 550px;
@@ -13,17 +13,25 @@
 /* Typography styling matching your Montserrat look */
 .hero-subtitle {
     font-family: 'Dancing Script', cursive;
-    color: #198754;
+    color: #4ade80; /* Light green accent that pops on dark */
     font-size: 1.8rem;
     font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .hero-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 3.5rem;
-    color: #1a1a1a;
+    color: #ffffff; /* Clean white text */
     line-height: 1.2;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.hero-desc {
+    color: #e0e0e0 !important; /* Soft light gray text */
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* Entrance Animations */
