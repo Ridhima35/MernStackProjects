@@ -1,0 +1,70 @@
+/* White Footer Container */
+.bg-white-custom {
+    background-color: #ffffff;
+    border-top: 1px solid #eaeaea; /* Very clean subtle divider */
+}
+
+.footer {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Brand Text */
+.footer-brand {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.footer-text {
+    color: #666666;
+    font-size: 0.85rem;
+}
+
+/* Headings */
+.footer-heading {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Links List */
+.footer-links a, .footer-contact-link {
+    color: #666666;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.footer-links a:hover, .footer-contact-link:hover {
+    color: #198754; /* Premium green highlight on hover */
+}
+
+/* Social Media Icons */
+.footer-socials a {
+    color: #666666;
+    font-size: 1.1rem;
+    transition: color 0.25s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.footer-socials a:hover {
+    color: #198754 !important;
+    transform: translateY(-2px);
+}
+
+/* Bottom copyright divider and text */
+.footer-bottom {
+    border-top: 1px solid #eaeaea !important;
+}
+
+.footer-copyright {
+    color: #999999;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
