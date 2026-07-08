@@ -1,0 +1,29 @@
+/* Logo Styling */
+.logo-text {
+    font-family: 'Lobster Two', 'Dancing Script', serif;
+    /* Uses your loaded Google Fonts */
+    letter-spacing: 1px;
+}
+
+/* Nav Links hover animation */
+.navbar-nav .nav-link {
+    color: #555;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #198754 !important;
+    /* Bootstrap success green */
+}
+
+/* Icons hover effect */
+.nav-icon-link {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-icon-link:hover {
+    color: #198754 !important;
+    transform: scale(1.1);
+}
