@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // 1. Connect to Database
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/OrganicShop')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/OrganicFoodShop')
   .then(() => console.log('MongoDB Connected: 127.0.0.1'))
   .catch(err => console.error('Error connecting to MongoDB:', err.message));
 

@@ -1,4 +1,6 @@
 import mongoose from 'mongoose';
+import dns from 'dns';
+dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 const connectDB = async () => {
     try {
@@ -6,7 +8,6 @@ const connectDB = async () => {
         console.log(`MongoDB Connected: ${conn.connection.host}`);
     } catch (error) {
         console.error(`Error: ${error.message}`);
-        process.exit(1);
     }
 };
 
