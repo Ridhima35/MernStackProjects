@@ -1,0 +1,47 @@
+import mongoose from 'mongoose';
+
+const productSchema = new mongoose.Schema(
+    {
+        name: {
+            type: String,
+            required: true,
+        },
+        price: {
+            type: Number,
+            required: true,
+            default: 0,
+        },
+        discount: {
+            type: Number,
+            default: 0,
+        },
+        description: {
+            type: String,
+            required: false,
+        },
+        imageURL: {
+            type: String,
+            required: false,
+        },
+        category: {
+            type: String,
+            required: true,
+        },
+        brandId: {
+            type: String,
+            required: false,
+        },
+        stockQty: {
+            type: Number,
+            required: true,
+            default: 0,
+        },
+    },
+    {
+        timestamps: true, // Automatically handles createdAt and updatedAt
+    }
+);
+
+const Product = mongoose.model('Product', productSchema);
+
+export default Product;
