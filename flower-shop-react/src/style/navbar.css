@@ -14,7 +14,7 @@
     font-size: 1.8rem;
     color: #1a1a1a !important;
     /* Elegant deep charcoal/black */
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     /* Generous spacing for a luxury feel */
     text-transform: uppercase;
     transition: color 0.3s ease;
@@ -67,8 +67,7 @@
     transition: width 0.25s ease;
 }
 
-.navbar-bottom-row .nav-link:hover::after,
-.navbar-bottom-row .nav-link.active::after {
+.navbar-bottom-row .nav-link:hover::after {
     width: calc(100% - 24px);
 }
 
@@ -85,4 +84,28 @@
 
 .navbar-bottom-row .nav-link:hover i {
     transform: scale(1.2);
+}
+
+/* Open dropdown on hover */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+}
+
+/* Make dropdown menu match the exact width of the Shop By Collections link */
+.navbar-bottom-row .dropdown-menu {
+    min-width: 0%;
+    width: 100%;
+    padding: 0;
+    /* Optional: removes extra spacing at top/bottom of box */
+}
+
+/* Center the text inside the dropdown items */
+.navbar-bottom-row .dropdown-item {
+    white-space: normal;
+    margin-top: 10px;
+    padding: 12px;
+    /* Allows long text to wrap to the next line if it's too wide */
 }

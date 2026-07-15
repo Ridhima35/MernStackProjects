@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import React, { useState } from 'react';
 import '../style/navbar.css'; // Import custom styles
@@ -62,20 +62,36 @@ function Navbar() {
             <div className="navbar-bottom-row py-2 bg-white">
                 <div className="container">
                     <ul className="nav justify-content-center fw-medium gap-3 gap-md-4">
-                        <li className="nav-item">
-                            <Link className="nav-link text-dark px-2" to="/collections">Shop By Collections</Link>
+                        <li className="nav-item dropdown">
+                            <NavLink
+                                className={({ isActive }) => `nav-link px-2 ${isActive ? 'text-success active' : 'text-dark'}`}
+                                to="/collections"
+                                id="collectionsDropdown"
+                                role="button"
+                                aria-expanded="false"
+                            >
+                                Shop By Collections
+                            </NavLink>
+                            <ul className="dropdown-menu border-0 shadow-sm" aria-labelledby="collectionsDropdown">
+
+                                <li><Link className="dropdown-item" to="/collections/new">New Collection</Link></li>
+                                <li><Link className="dropdown-item" to="/collections/box">Flowers In A Box</Link></li>
+                                <li><Link className="dropdown-item" to="/collections/vase">Flowers In A Vase</Link></li>
+                                <li><Link className="dropdown-item" to="/collections/bunches">Bunches</Link></li>
+                                <li><Link className="dropdown-item" to="/collections/luxury">Luxury</Link></li>
+                            </ul>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-success px-2 active" to="/">Home</Link>
+                            <NavLink to="/" className={({ isActive }) => `nav-link px-2 ${isActive ? 'text-success active' : 'text-dark'}`}>Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-dark px-2" to="/Occasions">Shop By Occasions</Link>
+                            <NavLink to="/Occasions" className={({ isActive }) => `nav-link px-2 ${isActive ? 'text-success active' : 'text-dark'}`}>Shop By Occasions</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-dark px-2" to="/decor">Floral Decor</Link>
+                            <NavLink to="/decor" className={({ isActive }) => `nav-link px-2 ${isActive ? 'text-success active' : 'text-dark'}`}>Floral Decor</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-dark px-2 d-flex align-items-center gap-1" to="/city">Choose Your City</Link>
+                            <NavLink to="/city" className={({ isActive }) => `nav-link px-2 d-flex align-items-center gap-1 ${isActive ? 'text-success active' : 'text-dark'}`}>Choose Your City</NavLink>
                         </li>
                     </ul>
                 </div>
@@ -85,3 +101,6 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
+
