@@ -45,6 +45,7 @@
 
 /* Bottom Navigation Row Links */
 .navbar-bottom-row .nav-link {
+    position: relative;
     font-family: Montserrat, sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -61,13 +62,15 @@
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: 2px;
+    bottom: -8px;
+    /* Moves the line down to the bottom of the navbar row */
     left: 12px;
     background-color: #198754;
     transition: width 0.25s ease;
 }
 
-.navbar-bottom-row .nav-link:hover::after {
+.navbar-bottom-row .nav-link:hover::after,
+.navbar-bottom-row .nav-link.active::after {
     width: calc(100% - 24px);
 }
 
@@ -90,22 +93,29 @@
 @media (min-width: 992px) {
     .dropdown:hover .dropdown-menu {
         display: block;
-        margin-top: 0;
+        margin-top: 8px;
     }
 }
 
 /* Make dropdown menu match the exact width of the Shop By Collections link */
 .navbar-bottom-row .dropdown-menu {
     min-width: 0%;
-    width: 100%;
-    padding: 0;
+    width: calc(100% - 24px);
+    left: 12px;
+    padding: 25px;
+    border-radius: 0px;
     /* Optional: removes extra spacing at top/bottom of box */
 }
 
 /* Center the text inside the dropdown items */
 .navbar-bottom-row .dropdown-item {
-    white-space: normal;
-    margin-top: 10px;
-    padding: 12px;
-    /* Allows long text to wrap to the next line if it's too wide */
+    padding: 4px 12px;
+}
+
+/* Remove the full-width grey background box on hover */
+.navbar-bottom-row .dropdown-item:hover {
+    background-color: transparent !important;
+    /* Makes the background clear */
+    color: #198754;
+    /* Optional: Changes the text to green when hovered */
 }

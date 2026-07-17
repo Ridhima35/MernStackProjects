@@ -7,7 +7,7 @@ function Navbar() {
     const [currency, setCurrency] = useState('INR');
 
     return (
-        <nav className="navbar-custom bg-white border-bottom sticky-top">
+        <nav className="navbar-custom bg-white sticky-top">
             {/* Row 1: Top Bar (Currency | Logo | Faccount & Actions) */}
             <div className="navbar-top-row py-3">
                 <div className="container d-flex justify-content-between align-items-center">
