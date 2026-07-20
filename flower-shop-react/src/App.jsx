@@ -7,6 +7,8 @@ import Collections from './pages/ShopByCollections';
 import Occasions from './pages/Occasions';
 import Decor from './pages/Decor';
 import City from './pages/City';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 function App() {
     return (
@@ -17,9 +19,12 @@ function App() {
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path='/collections' element={<Collections />} />
+                        <Route path='/collections/:categoryId' element={<Collections />} />
                         <Route path='/Occasions' element={<Occasions />} />
                         <Route path='/Decor' element={<Decor />} />
                         <Route path='/City' element={<City />} />
+                        <Route path='/login' element={<Login />} />
+                        <Route path='/signup' element={<Signup />} />
                     </Routes>
                 </main>
                 <Footer />

@@ -37,10 +37,9 @@ function Navbar() {
                     {/* Right Side: Faccount, Search, Cart */}
                     <div className="d-flex align-items-center gap-4">
                         {/* Faccount */}
-                        <a href="#" className="text-secondary text-decoration-none fw-medium d-flex align-items-center gap-1 nav-icon-link">
+                        <Link to="/login" className="text-secondary text-decoration-none fw-medium d-flex align-items-center gap-1 nav-icon-link">
                             <i className="bi bi-person-circle fs-5"></i>
-
-                        </a>
+                        </Link>
 
                         {/* Search Icon */}
                         <a href="#" className="text-secondary fs-5 nav-icon-link text-decoration-none">
